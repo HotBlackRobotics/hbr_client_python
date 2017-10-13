@@ -21,14 +21,13 @@ class UserClient(object):
             'email': email
             }
 
-        print(body)
-
         r = requests.post(API_URL + 'login', json=body)
-        print(r.text)
         if r.status_code == 200:
             self.token = r.json()['token']
+        else:
+            raise AuthenticationError
 
-    def get_data(self):
+    def get_data(self, id, page=1, per_page=20):
         headers = {'Authorization': 'Bearer %s'%self.token}
-        r = requests.get(API_URL + 'device/1?page=1&per_page=5', headers=headers)
+        r = requests.get(API_URL + 'device/{0}?page={1}&per_page={2}'.format(id, page, per_page), headers=headers)
         return r.json()
