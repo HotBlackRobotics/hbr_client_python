@@ -11,7 +11,5 @@ setup(
     download_url = 'https://github.com/HotBlackRobotics/hbr_client_python/archive/{}.tar.gz'.format(version), # I'll explain this in a second
     keywords = ['HBR', 'logging'], # arbitrary keywords
     classifiers = [],
-    install_requires=[
-        'requests'
-    ],
+    install_requires=['requests']
 )
