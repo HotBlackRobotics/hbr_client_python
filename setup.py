@@ -1,5 +1,5 @@
 from distutils.core import setup
-from __version__ import version
+from hbr_client.__version__ import version
 setup(
     name = 'hbr_client',
     packages = ['hbr_client'], # this must be the same as the name above
